@@ -6,7 +6,7 @@ var main = React.createClass({
   render: function() {
     return (
       <div>
-        Hello world!
+        Hello world25
       </div>
     );
   }
