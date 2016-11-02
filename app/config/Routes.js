@@ -6,13 +6,13 @@ var hashHistory = ReactRouter.hashHistory;
 var IndexRoute = ReactRouter.IndexRoute;
 var Link = ReactRouter.Link;
 var main = require('../components/Main');
-
+var SearchResultscontainer = require('../containers/SearchResultsContainer');
 
 
 var routes = (
   <Router history={hashHistory}>
-      <Route path='/' component={main}>
-      </Route>
+      <Route path='/' component={main}/>
+      <Route path='results' component={SearchResultsContainer}/>
 
   </Router>
 );
