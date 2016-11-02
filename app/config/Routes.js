@@ -6,7 +6,7 @@ var hashHistory = ReactRouter.hashHistory;
 var IndexRoute = ReactRouter.IndexRoute;
 var Link = ReactRouter.Link;
 var main = require('../components/Main');
-var SearchResultscontainer = require('../containers/SearchResultsContainer');
+var SearchResultsContainer = require('../containers/SearchResultsContainer');
 
 
 var routes = (

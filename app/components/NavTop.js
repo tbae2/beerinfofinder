@@ -1,8 +1,8 @@
 var React = require('react');
-var ReactBootstrap = require('react-bootstrap');
-var Navbar = ReactBootstrap.Navbar;
-var Nav = ReactBootstrap.Nav;
-var NavItem = ReactBootstrap.NavItem;
+//var ReactBootstrap = require('react-bootstrap');
+var Navbar = require('react-bootstrap').Navbar;
+var Nav = require('react-bootstrap').Nav;
+var NavItem = require('react-bootstrap').NavItem;
 function TopNav(){
 
       return (

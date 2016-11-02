@@ -1,7 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
-var ReactBootstrap = require('react-bootstrap');
-var SearchBar = require('./SearchBar');
+var SearchBarContainer = require('../containers/SearchBarContainer');
 var TopNav = require('./NavTop');
 var SearchResults = require('./SearchResults');
 
@@ -13,7 +12,7 @@ var main = React.createClass({
     return (
       <div className="main-container">
         <TopNav/>
-        <SearchBar />
+        <SearchBarContainer />
         <SearchResults />
       </div>
     );
