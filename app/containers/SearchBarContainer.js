@@ -3,6 +3,9 @@ var PropTypes = React.PropTypes;
 var SearchBar = require('../components/SearchBar');
 
 var SearchBarContainer = React.createClass({
+    contextTypes: {
+      router: React.PropTypes.object
+    },
     getInitialState: function(){
       return {
         query: ''

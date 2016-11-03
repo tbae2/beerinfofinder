@@ -7,13 +7,14 @@ var IndexRoute = ReactRouter.IndexRoute;
 var Link = ReactRouter.Link;
 var main = require('../components/Main');
 var SearchResultsContainer = require('../containers/SearchResultsContainer');
-
+var Home = require('../components/Home');
 
 var routes = (
   <Router history={hashHistory}>
-      <Route path='/' component={main}/>
-      <Route path='results' component={SearchResultsContainer}/>
-
+      <Route path='/' component={main}>
+        <IndexRoute component={Home}/>
+        <Route path='results' component={SearchResultsContainer}/>
+      </Route>
   </Router>
 );
 

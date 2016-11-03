@@ -1,22 +1,18 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var SearchBarContainer = require('../containers/SearchBarContainer');
-var TopNav = require('./NavTop');
-var SearchResults = require('./SearchResults');
 
 
-
-var main = React.createClass({
+var Home = React.createClass({
 
   render: function() {
     return (
       <div className="main-container">
-        <TopNav/>
-        {this.props.children}
+        <SearchBarContainer />
       </div>
     );
   }
 
 });
 
-module.exports = main;
+module.exports = Home;
