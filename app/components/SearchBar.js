@@ -6,6 +6,10 @@ var FormControl = require('react-bootstrap').FormControl;
 var FormGroup = require('react-bootstrap').FormGroup;
 var InputGroup = require('react-bootstrap').InputGroup;
 var Button = require('react-bootstrap').Button;
+var Dropdown = require('react-bootstrap').Dropdown;
+var MenuItem = require('react-bootstrap').Menu;
+
+
 function SearchBar(props){
     return (
     <div className="container-fluid">
@@ -13,6 +17,7 @@ function SearchBar(props){
         <div className="col-sm-8 col-sm-offset-2 text-center">
           <Form inline onSubmit={props.onSubmitQuery}>
             <FormGroup>
+
               <InputGroup>
                 <FormControl type="text" placeholder="testSearchBar.js" onChange={props.onQueryUpdate}/>
                 <InputGroup.Button>

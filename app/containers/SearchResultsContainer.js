@@ -7,7 +7,7 @@ var SearchResultsContainer = React.createClass({
 
   render: function() {
     return (
-      <div />
+      <SearchResults />
     );
   }
 

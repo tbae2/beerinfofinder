@@ -1,7 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var SearchBarContainer = require('../containers/SearchBarContainer');
-
+var SearchResultsContainer = require('../containers/SearchResultsContainer');
 
 var Home = React.createClass({
 
@@ -9,6 +9,7 @@ var Home = React.createClass({
     return (
       <div className="main-container">
         <SearchBarContainer />
+        <SearchResultsContainer />
       </div>
     );
   }
