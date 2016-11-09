@@ -21,7 +21,7 @@ function SearchBar(props){
             <FormGroup>
               <Dropdown id="dropdown-test">
                 <Dropdown.Toggle>
-                  Filter:
+                  Filter
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <MenuItem eventKey="1">Beer Name</MenuItem>
