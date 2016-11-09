@@ -5,6 +5,16 @@ var SearchResults =require('../components/SearchResults');
 
 var SearchResultsContainer = React.createClass({
 
+    getInitialState: function(){
+         return (
+           {
+             results: []
+           }
+         )
+    },
+    componentDidMount: function(){
+
+    },
   render: function() {
     return (
       <SearchResults />

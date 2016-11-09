@@ -17,4 +17,5 @@ function searchBeer(beerName){
 function getBeerInfo(query){
 
 
+
 };
