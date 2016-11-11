@@ -3,7 +3,8 @@ var React = require('react');
 
 function SearchResults(props){
   return(
-    <div>gibberish data test</div>
+
+    <div>{props.onUpdate}</div>
   )
 };
 

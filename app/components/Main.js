@@ -12,6 +12,7 @@ var main = React.createClass({
     return (
       <div className="main-container">
         <TopNav/>
+        <SearchBarContainer />
         {this.props.children}
       </div>
     );

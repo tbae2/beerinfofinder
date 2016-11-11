@@ -8,7 +8,7 @@ var Home = React.createClass({
   render: function() {
     return (
       <div className="main-container">
-        <SearchBarContainer />
+        
         <SearchResultsContainer />
       </div>
     );

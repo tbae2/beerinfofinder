@@ -8,17 +8,21 @@ var SearchResultsContainer = React.createClass({
     getInitialState: function(){
          return (
            {
-             results: []
+             beeritem: ''
            }
          )
     },
     componentDidMount: function(){
-
+      var query = this.props.location.state;
+        console.log(query.beeritem);
+        this.setState({
+          beeritem: query.beeritem
+        })
     },
   render: function() {
     return (
-      <SearchResults />
-    );
+      <SearchResults onUpdate={this.state.beeritem}/>
+    )
   }
 
 });

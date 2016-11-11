@@ -10,6 +10,11 @@ var Dropdown = require('react-bootstrap').Dropdown;
 var MenuItem = require('react-bootstrap').MenuItem;
 
 
+
+SearchBar.propTypes = {
+  beeritem: PropTypes.string.isRequired
+}
+
 function SearchBar(props){
     return (
     <div className="container-fluid">
