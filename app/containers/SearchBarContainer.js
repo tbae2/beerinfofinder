@@ -12,6 +12,8 @@ var SearchBarContainer = React.createClass({
       }
     },
       handleUpdateQuery: function(e){
+      //  console.log(e.target.value);
+      //set state as the search is updated
         this.setState({
           beeritem: e.target.value
         })
@@ -19,8 +21,9 @@ var SearchBarContainer = React.createClass({
     handleSubmitQuery: function(e){
       //prevent the default form action in html/bootstrap
       e.preventDefault();
-    //  console.log(this.context);
-      //console.log('the query button was pushed ' + this.state.beeritem);
+
+      //send state as prop through react router path
+
       this.context.router.push({
         pathname: '/results',
         state: {
@@ -33,7 +36,7 @@ var SearchBarContainer = React.createClass({
     return (
       <SearchBar onSubmitQuery={this.handleSubmitQuery}
         onQueryUpdate={this.handleUpdateQuery}
-        query={this.state.beeritem}
+
       />
     );
   }

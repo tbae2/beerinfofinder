@@ -14,10 +14,17 @@ var SearchResultsContainer = React.createClass({
     },
     componentDidMount: function(){
       var query = this.props.location.state;
-        console.log(query.beeritem);
+        //console.log(query.beeritem);
         this.setState({
           beeritem: query.beeritem
         })
+    },
+    componentWillReceiveProps: function(nextProps){
+      //look for props changes passed from searchbarcontainer if changed update search
+            this.setState({
+              beeritem:nextProps.location.state.beeritem
+            });
+
     },
   render: function() {
     return (
