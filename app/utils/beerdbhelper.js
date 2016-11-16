@@ -8,7 +8,7 @@ var key = breweryKey.breweryDb;
 
 function searchBeer(beerName){
     console.log(beerName);
-    return axios.get('http://api.brewerydb.com/v2/search?q=' + beerName + ' &type=beer&key=' + key);
+    return axios.get('http://localhost:3000/'+ '?q=' + beerName + ' &type=beer&key=' + key);
 
 };
 
@@ -25,8 +25,6 @@ var beerhelpers = {
 
     search: function(beerName){
         return searchBeer(beerName);
-    }.catch(function(err){
-      console.warn('Error in searchbeer' , err);
     }
 
 };
