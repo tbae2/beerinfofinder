@@ -40,13 +40,14 @@ var SearchResultsContainer = React.createClass({
     },
   render: function() {
 
+        return(
+        <div>
+          {this.state.beeritem.map(function(data){
+            return <SearchResults key={data.id} onUpdate={data} />
+          })}
+        </div>
+        )
 
-          var beers = this.state.beeritem.map(function(beer){
-            return beer;
-          })
-    return (
-        <SearchResults onUpdate={this.state.beeritem} />
-    )
   }
 
 });
