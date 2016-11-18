@@ -8,7 +8,7 @@ var SearchResultsContainer = React.createClass({
     getInitialState: function(){
          return (
            {
-             beeritem: ''
+             beeritem: []
            }
          )
     },
@@ -22,23 +22,30 @@ var SearchResultsContainer = React.createClass({
 
         beerhelpers.search(this.props.location.state.beeritem)
                 .then(function(beerInfo){
+                  console.log(beerInfo);
                     this.setState({
                       beeritem: beerInfo
                     })
+
                 }.bind(this));
 
 
     },
     componentWillReceiveProps: function(nextProps){
       //look for props changes passed from searchbarcontainer if changed update search
-            this.setState({
-              beeritem:nextProps.location.state.beeritem
-            });
+            // this.setState({
+            //   beeritem:nextProps.location.state.beeritem
+            // });
 
     },
   render: function() {
+
+
+          var beers = this.state.beeritem.map(function(beer){
+            return beer;
+          })
     return (
-      <SearchResults onUpdate={this.state.beeritem}/>
+        <SearchResults onUpdate={this.state.beeritem} />
     )
   }
 

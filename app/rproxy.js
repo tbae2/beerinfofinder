@@ -6,9 +6,12 @@ var app = express();
 
 
 app.use('/', function(req, res){
+
+   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+
     var url = apiForwardUrl + req.url;
     console.log(url);
-    console.log(req);
+  //  console.log(req);
     req.pipe(request(url)).pipe(res);
 
 });

@@ -5,7 +5,7 @@ function SearchResults(props){
   //console.log(props.onUpdate);
   return(
 
-    <div>{props.onUpdate}</div>
+    <div>{props.onUpdate[0]}</div>
   )
 };
 
