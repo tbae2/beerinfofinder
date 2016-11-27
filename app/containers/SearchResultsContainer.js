@@ -12,15 +12,8 @@ var SearchResultsContainer = React.createClass({
            }
          )
     },
-    componentDidMount: function(){
-      // var query = this.props.location.state;
-      //   //console.log(query.beeritem);
-      //   this.setState({
-      //     beeritem: query.beeritem
-      //   })
-
-
-        beerhelpers.search(this.props.location.state.beeritem)
+    searchBeer: function(beerquery){
+        beerhelpers.search(beerquery)
                 .then(function(beerInfo){
                   console.log(beerInfo);
                     this.setState({
@@ -29,6 +22,14 @@ var SearchResultsContainer = React.createClass({
 
                 }.bind(this));
 
+      },
+    componentDidMount: function(){
+      // var query = this.props.location.state;
+      //   //console.log(query.beeritem);
+      //   this.setState({
+      //     beeritem: query.beeritem
+      //   })
+      this.searchBeer(this.props.location.state.beeritem);
 
     },
     componentWillReceiveProps: function(nextProps){
@@ -36,6 +37,7 @@ var SearchResultsContainer = React.createClass({
             // this.setState({
             //   beeritem:nextProps.location.state.beeritem
             // });
+            this.searchBeer(nextProps.location.state.beeritem);
 
     },
   render: function() {
