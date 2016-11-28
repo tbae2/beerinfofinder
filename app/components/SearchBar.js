@@ -8,7 +8,7 @@ var InputGroup = require('react-bootstrap').InputGroup;
 var Button = require('react-bootstrap').Button;
 var Dropdown = require('react-bootstrap').Dropdown;
 var MenuItem = require('react-bootstrap').MenuItem;
-
+var ControlLabel = require('react-bootstrap').ControlLabel;
 
 
 SearchBar.propTypes = {
@@ -24,16 +24,12 @@ function SearchBar(props){
 
           <Form inline onSubmit={props.onSubmitQuery}>
             <FormGroup>
-              <Dropdown id="dropdown-test">
-                <Dropdown.Toggle>
-                  Filter
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <MenuItem eventKey="1">Beer Name</MenuItem>
-                  <MenuItem eventKey="2">Brewery</MenuItem>
-                  <MenuItem eventKey="3">Type</MenuItem>
-                </Dropdown.Menu>
-              </Dropdown>
+              <ControlLabel>Search By:</ControlLabel>
+              <FormControl componentClass="select" placeholder="Search Type" onChange={props.searchType}>
+                <option value="beername">Beer Name</option>
+                <option value="breweryname">Brewery</option>
+                <option value="beertype">Beer Type</option>
+              </FormControl>
               <InputGroup>
                 <FormControl type="text" placeholder="testSearchBar.js" onChange={props.onQueryUpdate}/>
                 <InputGroup.Button>
