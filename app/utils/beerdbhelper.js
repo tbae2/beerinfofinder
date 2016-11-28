@@ -6,9 +6,16 @@ var key = breweryKey.breweryDb;
 
 //http://api.brewerydb.com/v2/search
 
-function searchBeer(beerName){
-    // console.log(beerName);
-    return  axios.get('http://localhost:3000/?q=' + beerName + ' &type=beer&key=' + key)
+function searchBeer(beerQuery){
+     console.log(beerQuery);
+
+    if(beerQuery[1] === 'beername'){
+    return  axios.get('http://localhost:3000/search?q=' + beerQuery[0] + '&type=beer&key=' + key)
+  } else if(beerQuery[1] === 'breweryname'){
+    return axios.get('http://localhost:3000/search?q=' + beerQuery[0] + '&type=brewery&key=' + key)
+  } else if(beerQuery[1] === 'beertype'){
+        axios.get('http://localhost:3000/style?q=' + beerQuery[0] + '&key=' + key)
+  }
 };
 
 
@@ -22,8 +29,9 @@ function getBeerInfo(query){
 
 var beerhelpers = {
 
-    search: function(beerName){
-      return searchBeer(beerName)
+    search: function(beerQuery){
+      //console.log(beerQuery);
+      return searchBeer(beerQuery)
           .then(function(res){
                 return res.data.data;
             });

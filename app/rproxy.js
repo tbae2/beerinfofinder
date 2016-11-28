@@ -1,7 +1,7 @@
 var express = require('express');
 var request = require('request');
 
-var apiForwardUrl = 'http://api.brewerydb.com/v2/search';
+var apiForwardUrl = 'http://api.brewerydb.com/v2';
 var app = express();
 
 
