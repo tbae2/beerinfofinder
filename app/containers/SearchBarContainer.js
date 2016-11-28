@@ -8,7 +8,8 @@ var SearchBarContainer = React.createClass({
     },
     getInitialState: function(){
       return {
-        beeritem: ''
+        beeritem: '',
+        searchType: 'beername'
       }
     },
       handleUpdateQuery: function(e){
@@ -16,6 +17,12 @@ var SearchBarContainer = React.createClass({
       //set state as the search is updated
         this.setState({
           beeritem: e.target.value
+        })
+      },
+      searchSelectChange: function(e){
+        console.log(e.target.value);
+        this.setState({
+          searchType: e.target.value
         })
       },
     handleSubmitQuery: function(e){
@@ -27,7 +34,8 @@ var SearchBarContainer = React.createClass({
       this.context.router.push({
         pathname: '/results',
         state: {
-          beeritem: this.state.beeritem
+          beeritem: this.state.beeritem,
+          searchType: this.state.searchType
         }
        })
 
@@ -36,6 +44,7 @@ var SearchBarContainer = React.createClass({
     return (
       <SearchBar onSubmitQuery={this.handleSubmitQuery}
         onQueryUpdate={this.handleUpdateQuery}
+        onSelectChange={this.searchSelectChange}
 
       />
     );

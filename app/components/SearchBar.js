@@ -25,7 +25,7 @@ function SearchBar(props){
           <Form inline onSubmit={props.onSubmitQuery}>
             <FormGroup>
               <ControlLabel>Search By:</ControlLabel>
-              <FormControl componentClass="select" placeholder="Search Type" onChange={props.searchType}>
+              <FormControl componentClass="select" placeholder="Search Type" onChange={props.searchSelectChange}>
                 <option value="beername">Beer Name</option>
                 <option value="breweryname">Brewery</option>
                 <option value="beertype">Beer Type</option>
