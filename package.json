@@ -16,16 +16,13 @@
   "bugs": {
     "url": "https://github.com/tbae2/beerinfofinder/issues"
   },
-  "homepage": "https://github.com/tbae2/beerinfofinder#readme",
+  "homepage": "https://github.com/tb ae2/beerinfofinder#readme",
   "dependencies": {
     "axios": "^0.15.2",
-    "express": "^4.14.0",
-    "http-proxy": "^1.15.2",
     "react": "^15.3.2",
     "react-bootstrap": "^0.30.6",
     "react-dom": "^15.3.2",
-    "react-router": "^3.0.0",
-    "request": "^2.78.0"
+    "react-router": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
