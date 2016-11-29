@@ -15,7 +15,7 @@ var SearchResultsContainer = React.createClass({
     searchBeer: function(beerquery){
         beerhelpers.search(beerquery)
                 .then(function(beerInfo){
-                  console.log(beerInfo);
+                  //console.log(beerInfo);
                     this.setState({
                       beeritem: beerInfo
                     })
@@ -37,7 +37,8 @@ var SearchResultsContainer = React.createClass({
             // this.setState({
             //   beeritem:nextProps.location.state.beeritem
             // });
-            this.searchBeer([this.props.location.state.beeritem,this.props.location.state.searchType]);
+            console.log(nextProps);
+            this.searchBeer([nextProps.location.state.beeritem,nextProps.location.state.searchType]);
 
     },
   render: function() {
