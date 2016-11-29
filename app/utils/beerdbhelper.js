@@ -10,18 +10,19 @@ function searchBeer(beerQuery){
      console.log(beerQuery);
 
     if(beerQuery[1] === 'beername'){
-    return  axios.get('http://localhost:3000/search?q=' + beerQuery[0] + '&type=beer&key=' + key)
+      return axios.get('http://localhost:3000/search?q=' + beerQuery[0] + '&type=beer&key=' + key)
   } else if(beerQuery[1] === 'breweryname'){
-      return  axios.get('http://localhost:3000/search?q=' + beerQuery[0] + '&type=brewery&key=' + key)
+      return axios.get('http://localhost:3000/search?q=' + beerQuery[0] + '&type=brewery&key=' + key)
             .then(function(response){
-                console.log(response.data.data[0].id);
+                //console.log(response.data.data[0].id);
                 return axios.get('http://localhost:3000/brewery/' + response.data.data[0].id + '/beers?key=' + key)
             });
   } else if(beerQuery[1] === 'beertype'){
         return axios.get('http://localhost:3000/search/style?q=' + beerQuery[0] + '&key=' + key)
             .then(function(response){
-                return axios.get('http://localhost:3000/')
-            })
+              console.log(response.data.data[0]);
+                return axios.get('http://localhost:3000/beers?styleId=' + response.data.data[0].id + '&key=' + key)
+            });
   }
 };
 
