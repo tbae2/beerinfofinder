@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var SearchResults =require('../components/SearchResults');
 var beerhelpers = require('../utils/beerdbhelper');
+var FilterBox = require('../components/FilterBox');
 
 var SearchResultsContainer = React.createClass({
 
@@ -44,10 +45,13 @@ var SearchResultsContainer = React.createClass({
   render: function() {
 
         return(
-        <div>
-          {this.state.beeritem.map(function(data){
-            return <SearchResults key={data.id} onUpdate={data} />
-          })}
+          <div>
+            <FilterBox />
+            <div>
+                {this.state.beeritem.map(function(data){
+                    return <SearchResults key={data.id} onUpdate={data} />
+                  })}
+        </div>
         </div>
         )
 
