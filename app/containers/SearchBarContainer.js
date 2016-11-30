@@ -20,10 +20,10 @@ var SearchBarContainer = React.createClass({
         })
       },
       searchSelectChange: function(e){
-        console.log(e.target.value);
         this.setState({
           searchType: e.target.value
-        })
+        });
+
       },
     handleSubmitQuery: function(e){
       //prevent the default form action in html/bootstrap

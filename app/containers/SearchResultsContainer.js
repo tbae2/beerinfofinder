@@ -15,8 +15,16 @@ var SearchResultsContainer = React.createClass({
            }
          )
     },
-    updateSort: function(e){
+    updateSortBy: function(e){
         console.log(e.target.value);
+        this.setState({
+          sortBy: e.target.value
+        });
+    },
+    updateSortOrder: function(e){
+      this.setState({
+        sortOrder: e.target.value
+      })
     }
     ,
     searchBeer: function(beerquery){
@@ -30,6 +38,10 @@ var SearchResultsContainer = React.createClass({
                 }.bind(this));
 
       },
+        resultFilter: function(){
+
+        }
+      ,
     componentDidMount: function(){
       // var query = this.props.location.state;
       //   //console.log(query.beeritem);
@@ -52,7 +64,13 @@ var SearchResultsContainer = React.createClass({
 
         return(
           <div>
-            <FilterBox onSelect={this.updateSort}/>
+            <FilterBox
+                sortOrder={this.state.sortOrder}
+                sortBy={this.state.sortBy}
+                onSelect={this.updateSortBy}
+                onOrder={this.updateSortOrder}
+                submitFilter={this.resultFilter}
+            />
             <div>
                 {this.state.beeritem.map(function(data){
                     return <SearchResults key={data.id} onUpdate={data} />
