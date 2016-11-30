@@ -9,6 +9,7 @@ var Home = React.createClass({
     return (
       <div className="main-container">
 
+          yada yada find beer beer beer
 
       </div>
     );

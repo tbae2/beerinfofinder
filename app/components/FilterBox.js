@@ -1,19 +1,29 @@
 var React = require('react');
 var Form = require('react-bootstrap').Form;
-var CheckBox = require('react-bootstrap').CheckBox;
-
-
+var Checkbox = require('react-bootstrap').Checkbox;
+var Radio = require('react-bootstrap').Radio;
+var Button = require('react-bootstrap').Button;
 function FilterBox(props){
   return (
-        // <div>
-        //   <Form>
-        //     <CheckBox>
-        //         checkbox1
-        //     </CheckBox>
-        //   </Form>
-        // </div>
-
-        <div>asdfasdf</div>
+        <div>
+            <Form>
+              <Checkbox inline>
+                 Name
+              </Checkbox>
+              <Checkbox inline>
+                 ABV
+              </Checkbox>
+              <Radio inline name="order">
+                Ascending
+              </Radio>
+              <Radio inline name="order">
+                Descending
+              </Radio>
+              <Button>
+                Filter
+              </Button>
+              </Form>
+        </div>
   )
 };
 

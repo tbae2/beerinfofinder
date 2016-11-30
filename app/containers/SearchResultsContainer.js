@@ -9,10 +9,16 @@ var SearchResultsContainer = React.createClass({
     getInitialState: function(){
          return (
            {
-             beeritem: []
+             beeritem: [],
+             sortOrder: 'ascending',
+             sortBy: 'name'
            }
          )
     },
+    updateSort: function(e){
+        console.log(e.target.value);
+    }
+    ,
     searchBeer: function(beerquery){
         beerhelpers.search(beerquery)
                 .then(function(beerInfo){
@@ -46,7 +52,7 @@ var SearchResultsContainer = React.createClass({
 
         return(
           <div>
-            <FilterBox />
+            <FilterBox onSelect={this.updateSort}/>
             <div>
                 {this.state.beeritem.map(function(data){
                     return <SearchResults key={data.id} onUpdate={data} />
