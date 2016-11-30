@@ -39,7 +39,12 @@ var SearchResultsContainer = React.createClass({
 
       },
         resultFilter: function(){
-
+                beerhelpers.sort([this.state.sortOrder, this.state.sortBy, this.state.beeritem])
+                        .then(function(sorted){
+                          this.setState({
+                              beeritem: sorted
+                          })
+                        }.bind(this));
         }
       ,
     componentDidMount: function(){
