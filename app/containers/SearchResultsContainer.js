@@ -10,7 +10,7 @@ var SearchResultsContainer = React.createClass({
          return (
            {
              beeritem: [],
-             sortOrder: 'ascending',
+             sortOrder: 'ASC',
              sortBy: 'name'
            }
          )
@@ -38,22 +38,44 @@ var SearchResultsContainer = React.createClass({
                 }.bind(this));
 
       },
-        resultFilter: function(){
-                beerhelpers.sort([this.state.sortOrder, this.state.sortBy, this.state.beeritem])
-                        .then(function(sorted){
-                          this.setState({
-                              beeritem: sorted
-                          })
-                        }.bind(this));
-        }
-      ,
+    resultFilter: function(){
+
+        var original = this.state.beeritem;
+        var sortOrder = this.state.sortOrder;
+        var sortBy = this.state.sortBy;
+
+
+
+        // if(sortOrder === "ascending" && sortBy === "abv"){
+        //   original.sort(function(a,b){
+        //           return a.abv - b.abv;
+        //     })
+        // } else if (sortOrder === "descending" && sortBy === "abv"){
+        //   original.sort(function(a,b){
+        //           return b.abv - a.abv;
+        //     })
+        // } else if(sortOrder === "ascending" && sortBy === "name"){
+        //     original.sort(function(a,b){
+        //         return a.name > b.name;
+        //     })
+        // } else if (sortOrder === "descending" && sortBy === "name"){
+        //     original.sort(function(a,b){
+        //       return a.name < b.name;
+        //     })
+        // }
+
+          this.setState({
+            beeritem: original
+          })
+
+    },
     componentDidMount: function(){
       // var query = this.props.location.state;
       //   //console.log(query.beeritem);
       //   this.setState({
       //     beeritem: query.beeritem
       //   })
-      this.searchBeer([this.props.location.state.beeritem,this.props.location.state.searchType]);
+      this.searchBeer([this.props.location.state.beeritem,this.props.location.state.searchType,this.state.sortOrder,this.state.sortBy]);
 
     },
     componentWillReceiveProps: function(nextProps){
@@ -61,8 +83,8 @@ var SearchResultsContainer = React.createClass({
             // this.setState({
             //   beeritem:nextProps.location.state.beeritem
             // });
-            console.log(nextProps);
-            this.searchBeer([nextProps.location.state.beeritem,nextProps.location.state.searchType]);
+          //  console.log(nextProps);
+          this.searchBeer([this.props.location.state.beeritem,this.props.location.state.searchType,this.state.sortOrder,this.state.sortBy]);
 
     },
   render: function() {

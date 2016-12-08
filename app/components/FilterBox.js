@@ -18,14 +18,14 @@ function FilterBox(props){
               </Checkbox>
               </FormGroup>
               <FormGroup>
-              <Radio inline name="order" checked={props.sortOrder === 'ascending'} value='ascending' onChange={props.onOrder}>
+              <Radio inline name="order" checked={props.sortOrder === 'ASC'} value='ASC' onChange={props.onOrder}>
                 Ascending
               </Radio>
-              <Radio inline name="order" checked={props.sortOrder === 'descending'} value='descending' onChange={props.onOrder}>
+              <Radio inline name="order" checked={props.sortOrder === 'DSC'} value='DSC' onChange={props.onOrder}>
                 Descending
               </Radio>
               </FormGroup>
-              <Button>
+              <Button type="submit">
                 Filter
               </Button>
               </Form>
