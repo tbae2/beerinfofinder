@@ -21,7 +21,7 @@ function FilterBox(props){
               <Radio inline name="order" checked={props.sortOrder === 'ASC'} value='ASC' onChange={props.onOrder}>
                 Ascending
               </Radio>
-              <Radio inline name="order" checked={props.sortOrder === 'DSC'} value='DSC' onChange={props.onOrder}>
+              <Radio inline name="order" checked={props.sortOrder === 'DESC'} value='DESC' onChange={props.onOrder}>
                 Descending
               </Radio>
               </FormGroup>

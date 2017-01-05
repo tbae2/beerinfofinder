@@ -9,24 +9,10 @@ var SearchResultsContainer = React.createClass({
     getInitialState: function(){
          return (
            {
-             beeritem: [],
-             sortOrder: 'ASC',
-             sortBy: 'name'
+             beeritem: []
            }
          )
     },
-    updateSortBy: function(e){
-        console.log(e.target.value);
-        this.setState({
-          sortBy: e.target.value
-        });
-    },
-    updateSortOrder: function(e){
-      this.setState({
-        sortOrder: e.target.value
-      })
-    }
-    ,
     searchBeer: function(beerquery){
         beerhelpers.search(beerquery)
                 .then(function(beerInfo){
@@ -43,30 +29,12 @@ var SearchResultsContainer = React.createClass({
         var original = this.state.beeritem;
         var sortOrder = this.state.sortOrder;
         var sortBy = this.state.sortBy;
+        console.log(sortOrder);
 
-
-
-        // if(sortOrder === "ascending" && sortBy === "abv"){
-        //   original.sort(function(a,b){
-        //           return a.abv - b.abv;
-        //     })
-        // } else if (sortOrder === "descending" && sortBy === "abv"){
-        //   original.sort(function(a,b){
-        //           return b.abv - a.abv;
-        //     })
-        // } else if(sortOrder === "ascending" && sortBy === "name"){
-        //     original.sort(function(a,b){
-        //         return a.name > b.name;
-        //     })
-        // } else if (sortOrder === "descending" && sortBy === "name"){
-        //     original.sort(function(a,b){
-        //       return a.name < b.name;
-        //     })
-        // }
-
-          this.setState({
-            beeritem: original
-          })
+          //
+          // this.setState({
+          //   beeritem: original
+          // })
 
     },
     componentDidMount: function(){
@@ -91,18 +59,10 @@ var SearchResultsContainer = React.createClass({
 
         return(
           <div>
-            <FilterBox
-                sortOrder={this.state.sortOrder}
-                sortBy={this.state.sortBy}
-                onSelect={this.updateSortBy}
-                onOrder={this.updateSortOrder}
-                submitFilter={this.resultFilter}
-            />
-            <div>
-                {this.state.beeritem.map(function(data){
+                    {this.state.beeritem.map(function(data){
                     return <SearchResults key={data.id} onUpdate={data} />
                   })}
-        </div>
+
         </div>
         )
 

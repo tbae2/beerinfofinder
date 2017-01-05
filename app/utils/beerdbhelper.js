@@ -12,8 +12,8 @@ function searchBeer(beerQuery) {
     if (beerQuery[1] === 'beername') {
         return axios.get('http://localhost:3000/search?q=' + beerQuery[0] + '&type=beer&key=' + key)
                 .then(function(response){
-                        console.log(response);
-                        console.log(beerQuery[2]);
+                        //console.log(response);
+                        //console.log(beerQuery[2]);
                         var beersToGet = [];
                         while(beersToGet.length < 10){
                             response.data.data.map(function(data){

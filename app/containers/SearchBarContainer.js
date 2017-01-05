@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var SearchBar = require('../components/SearchBar');
+var FilterBox = require('../components/FilterBox');
 
 var SearchBarContainer = React.createClass({
     contextTypes: {
@@ -9,7 +10,9 @@ var SearchBarContainer = React.createClass({
     getInitialState: function(){
       return {
         beeritem: '',
-        searchType: 'beername'
+        searchType: 'beername',
+        sortOrder: 'ASC',
+        sortBy: 'name'
       }
     },
       handleUpdateQuery: function(e){
@@ -25,6 +28,19 @@ var SearchBarContainer = React.createClass({
         });
 
       },
+      updateSortBy: function(e){
+          console.log(e.target.value);
+          this.setState({
+            sortBy: e.target.value
+          });
+      },
+      updateSortOrder: function(e){
+          console.log(e.target.value);
+        this.setState({
+          sortOrder: e.target.value
+        })
+      }
+      ,
     handleSubmitQuery: function(e){
       //prevent the default form action in html/bootstrap
       e.preventDefault();
@@ -41,12 +57,21 @@ var SearchBarContainer = React.createClass({
 
     },
   render: function() {
-    return (
+    return (<div>
       <SearchBar onSubmitQuery={this.handleSubmitQuery}
         onQueryUpdate={this.handleUpdateQuery}
         onSelectChange={this.searchSelectChange}
-
       />
+      <div>
+      <FilterBox
+          sortOrder={this.state.sortOrder}
+          sortBy={this.state.sortBy}
+          onSelect={this.updateSortBy}
+          onOrder={this.updateSortOrder}
+          submitFilter={this.resultFilter}
+      />
+     </div>
+    </div>
     );
   }
 
