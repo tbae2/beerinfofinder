@@ -8,7 +8,7 @@ var FormGroup = require('react-bootstrap').FormGroup;
 function FilterBox(props){
   return (
         <div>
-            <Form inline onSubmit={props.submitFilter}>
+            <Form inline onSubmit={props.submitFilter} style={props.searchStarted}>
               <FormGroup>
               <Checkbox inline value='name' checked={props.sortBy === 'name'} onChange={props.onSelect}>
                  Name

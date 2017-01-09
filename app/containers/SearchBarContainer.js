@@ -12,7 +12,8 @@ var SearchBarContainer = React.createClass({
         beeritem: '',
         searchType: 'beername',
         sortOrder: 'ASC',
-        sortBy: 'name'
+        sortBy: 'name',
+        searchInitiated: {display: 'none'}
       }
     },
       handleUpdateQuery: function(e){
@@ -44,7 +45,9 @@ var SearchBarContainer = React.createClass({
     handleSubmitQuery: function(e){
       //prevent the default form action in html/bootstrap
       e.preventDefault();
-
+      this.setState({
+          searchInitiated: {display: 'inline'}
+      })
       //send state as prop through react router path
 
       this.context.router.push({
@@ -69,6 +72,7 @@ var SearchBarContainer = React.createClass({
           onSelect={this.updateSortBy}
           onOrder={this.updateSortOrder}
           submitFilter={this.resultFilter}
+          searchStarted={this.state.searchInitiated}
       />
      </div>
     </div>
