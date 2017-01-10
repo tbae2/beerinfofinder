@@ -54,7 +54,9 @@ var SearchBarContainer = React.createClass({
         pathname: '/results',
         state: {
           beeritem: this.state.beeritem,
-          searchType: this.state.searchType
+          searchType: this.state.searchType,
+          sortOrder: this.state.sortOrder,
+          sortBy: this.state.sortBy
         }
        })
 

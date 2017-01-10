@@ -13,7 +13,9 @@ var routes = (
   <Router history={hashHistory}>
       <Route path='/' component={main}>
         <IndexRoute component={Home}/>
-        <Route path='results' component={SearchResultsContainer}/>
+        <Route path='results' component={SearchResultsContainer}>
+            <Route path='filter' component={SearchResultscontainer} />
+        </Route>
       </Route>
   </Router>
 );
