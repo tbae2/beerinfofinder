@@ -1,5 +1,5 @@
-var React = require('react');
-var Panel = require('react-bootstrap').Panel;
+import React from 'react';
+import { Panel } from 'react-bootstrap';
 
 
 function SearchResults(props){

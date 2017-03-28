@@ -1,13 +1,13 @@
-var React = require('react');
+import React from 'react';
 var PropTypes = React.PropTypes;
-var SearchBarContainer = require('../containers/SearchBarContainer');
-var SearchResultsContainer = require('../containers/SearchResultsContainer');
+// var SearchBarContainer = require('../containers/SearchBarContainer');
+// var SearchResultsContainer = require('../containers/SearchResultsContainer');
 
 var Home = React.createClass({
 
   render: function() {
     return (
-      <div className="main-container">
+      <div className="home-page">
 
           yada yada find beer beer beer
 

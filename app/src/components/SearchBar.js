@@ -1,19 +1,20 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React from 'react';
+// var PropTypes = React.PropTypes;
+import {Form, FormControl, FormGroup, InputGroup,Button,ControlLabel } from 'react-bootstrap'
 //var ReactBootstrap = require('react-bootstrap');
-var Form = require('react-bootstrap').Form;
-var FormControl = require('react-bootstrap').FormControl;
-var FormGroup = require('react-bootstrap').FormGroup;
-var InputGroup = require('react-bootstrap').InputGroup;
-var Button = require('react-bootstrap').Button;
-var Dropdown = require('react-bootstrap').Dropdown;
-var MenuItem = require('react-bootstrap').MenuItem;
-var ControlLabel = require('react-bootstrap').ControlLabel;
+// var Form = require('react-bootstrap').Form;
+// var FormControl = require('react-bootstrap').FormControl;
+// var FormGroup = require('react-bootstrap').FormGroup;
+// var InputGroup = require('react-bootstrap').InputGroup;
+// var Button = require('react-bootstrap').Button;
+// var Dropdown = require('react-bootstrap').Dropdown;
+// var MenuItem = require('react-bootstrap').MenuItem;
+// var ControlLabel = require('react-bootstrap').ControlLabel;
 
 
-SearchBar.propTypes = {
-  beeritem: PropTypes.string.isRequired
-}
+// SearchBar.propTypes = {
+//   beeritem: PropTypes.string.isRequired
+// }
 
 function SearchBar(props){
     return (

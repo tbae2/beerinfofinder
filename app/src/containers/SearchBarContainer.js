@@ -1,12 +1,12 @@
 var React = require('react');
-var PropTypes = React.PropTypes;
+// var PropTypes = React.PropTypes;
 var SearchBar = require('../components/SearchBar');
 var FilterBox = require('../components/FilterBox');
 
 var SearchBarContainer = React.createClass({
-    contextTypes: {
-      router: React.PropTypes.object.isRequired
-    },
+    // contextTypes: {
+    //   router: React.PropTypes.object.isRequired
+    // },
     getInitialState: function(){
       return {
         beeritem: '',

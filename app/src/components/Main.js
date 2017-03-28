@@ -1,7 +1,7 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React from 'react';
+//var PropTypes = React.PropTypes;
 var SearchBarContainer = require('../containers/SearchBarContainer');
-var TopNav = require('./NavTop');
+var TopNav = require('../containers/NavTop');
 var SearchResults = require('./SearchResults');
 
 
@@ -20,4 +20,4 @@ var main = React.createClass({
 
 });
 
-module.exports = main;
+export default Main;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import TopNav from './components/NavTop'
+import TopNav from './containers/NavTop'
 import SearchBarContainer from './containers/SearchBarContainer'
 
 class App extends Component {

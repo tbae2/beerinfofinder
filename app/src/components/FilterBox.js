@@ -1,4 +1,4 @@
-var React = require('react');
+import React from 'react';
 var Form = require('react-bootstrap').Form;
 var Checkbox = require('react-bootstrap').Checkbox;
 var Radio = require('react-bootstrap').Radio;
