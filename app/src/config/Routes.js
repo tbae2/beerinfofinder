@@ -3,17 +3,20 @@ import { ReactRouter,Router,Route, IndexRoute,Link,browserHistory } from 'react-
 import Main from '../components/Main'
 import SearchResultsContainer from '../containers/SearchResultsContainer'
 import Home from '../components/Home'
-var Home = require('../components/Home');
+
 
 var routes = (
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
       <Route path='/' component={Main}>
         <IndexRoute component={Home}/>
-        <Route path='results' component={SearchResultsContainer}>
-            <Route path='filter' component={SearchResultsContainer} />
-        </Route>
+        <Route path='results' component='SearchResultsContainer'></Route>
       </Route>
+
+        {/* <Route path='results' component={SearchResultsContainer}>
+            <Route path='filter' component={SearchResultsContainer} />
+
+        </Route> */}
   </Router>
 );
 
-module.exports = routes;
+export default routes;

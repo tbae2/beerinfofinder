@@ -47,4 +47,4 @@ function SearchBar(props){
 };
 
 
-module.exports = SearchBar;
+export default SearchBar;

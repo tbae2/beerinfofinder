@@ -1,7 +1,7 @@
 var React = require('react');
 // var PropTypes = React.PropTypes;
-var SearchBar = require('../components/SearchBar');
-var FilterBox = require('../components/FilterBox');
+import SearchBar from '../components/SearchBar'
+import FilterBox from '../components/FilterBox'
 
 var SearchBarContainer = React.createClass({
     // contextTypes: {
@@ -50,15 +50,15 @@ var SearchBarContainer = React.createClass({
       })
       //send state as prop through react router path
 
-      this.context.router.push({
-        pathname: '/results',
-        state: {
-          beeritem: this.state.beeritem,
-          searchType: this.state.searchType,
-          sortOrder: this.state.sortOrder,
-          sortBy: this.state.sortBy
-        }
-       })
+      // this.context.router.push({
+      //   pathname: '/results',
+      //   state: {
+      //     beeritem: this.state.beeritem,
+      //     searchType: this.state.searchType,
+      //     sortOrder: this.state.sortOrder,
+      //     sortBy: this.state.sortBy
+      //   }
+      //  })
 
     },
   render: function() {
@@ -83,4 +83,4 @@ var SearchBarContainer = React.createClass({
 
 });
 
-module.exports = SearchBarContainer;
+export default SearchBarContainer;

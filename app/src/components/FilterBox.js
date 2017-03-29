@@ -33,4 +33,4 @@ function FilterBox(props){
   )
 };
 
-module.exports = FilterBox;
+export default FilterBox;

@@ -17,4 +17,4 @@ var Home = React.createClass({
 
 });
 
-module.exports = Home;
+export default Home;

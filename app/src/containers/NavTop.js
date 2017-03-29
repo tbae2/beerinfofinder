@@ -1,8 +1,7 @@
 import React from 'react';
 //var ReactBootstrap = require('react-bootstrap');
-var Navbar = require('react-bootstrap').Navbar;
-var Nav = require('react-bootstrap').Nav;
-var NavItem = require('react-bootstrap').NavItem;
+import { Navbar, Nav, NavItem } from 'react-bootstrap'
+
 function TopNav(){
 
       return (
@@ -21,4 +20,4 @@ function TopNav(){
 
 };
 
-module.exports = TopNav;
+export default Topnav;

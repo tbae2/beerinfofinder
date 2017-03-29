@@ -18,4 +18,4 @@ function SearchResults(props){
 };
 
 
-module.exports = SearchResults;
+export default SearchResults;

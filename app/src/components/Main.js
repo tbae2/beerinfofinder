@@ -1,17 +1,16 @@
 import React from 'react';
 //var PropTypes = React.PropTypes;
-var SearchBarContainer = require('../containers/SearchBarContainer');
-var TopNav = require('../containers/NavTop');
-var SearchResults = require('./SearchResults');
-
-
+import SearchBarContainer from '../containers/SearchBarContainer';
+import TopNav from '../containers/NavTop';
+import SearchResults from './SearchResults';
 
 var main = React.createClass({
 
   render: function() {
     return (
+      <TopNav/>
       <div className="main-container">
-        <TopNav/>
+
         <SearchBarContainer />
         {this.props.children}
       </div>

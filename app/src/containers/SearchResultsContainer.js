@@ -76,4 +76,4 @@ var SearchResultsContainer = React.createClass({
 
 });
 
-module.exports = SearchResultsContainer;
+export default SearchResultsContainer;
