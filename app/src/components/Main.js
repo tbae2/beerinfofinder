@@ -8,9 +8,9 @@ var main = React.createClass({
 
   render: function() {
     return (
-      <TopNav/>
-      <div className="main-container">
 
+      <div className="main-container">
+              <TopNav />
         <SearchBarContainer />
         {this.props.children}
       </div>
@@ -19,4 +19,4 @@ var main = React.createClass({
 
 });
 
-export default Main;
+export default main;

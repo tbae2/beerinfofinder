@@ -11,11 +11,6 @@ var routes = (
         <IndexRoute component={Home}/>
         <Route path='results' component='SearchResultsContainer'></Route>
       </Route>
-
-        {/* <Route path='results' component={SearchResultsContainer}>
-            <Route path='filter' component={SearchResultsContainer} />
-
-        </Route> */}
   </Router>
 );
 

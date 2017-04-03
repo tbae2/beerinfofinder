@@ -20,4 +20,4 @@ function TopNav(){
 
 };
 
-export default Topnav;
+export default TopNav;
