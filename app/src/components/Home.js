@@ -1,5 +1,4 @@
 import React from 'react';
-var PropTypes = React.PropTypes;
 // var SearchBarContainer = require('../containers/SearchBarContainer');
 // var SearchResultsContainer = require('../containers/SearchResultsContainer');
 
@@ -9,7 +8,7 @@ var Home = React.createClass({
     return (
       <div className="home-page">
 
-          yada yada find beer beer beer
+          <p>yada yada find beer beer beer</p>
 
       </div>
     );

@@ -1,6 +1,18 @@
 import React from 'react';
 //var ReactBootstrap = require('react-bootstrap');
 import { Navbar, Nav, NavItem } from 'react-bootstrap'
+import { Route,NavLink,Link } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
+
+
+const ListItemLink = ({to, children}) => (
+  <Route path={to} children={({match}) => (
+    <li role="presentation" className={match ? 'active' : ''}>
+      <Link to={to}>{children}</Link>
+    </li>
+  )} />
+)
+
 
 function TopNav(){
 
@@ -8,11 +20,11 @@ function TopNav(){
         <Navbar inverse>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href='#'>BeerFinder</a>
+              <a href='/'>BeerFinder</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav pullRight>
-            <NavItem eventKey={1} href="https://github.com/tbae2/beerinfofinder">GitHub Link</NavItem>
+            <ListItemLink to="/about">About</ListItemLink>
           </Nav>
         </Navbar>
       )
