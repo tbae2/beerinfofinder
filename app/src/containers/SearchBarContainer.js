@@ -53,7 +53,12 @@ var SearchBarContainer = React.createClass({
       })
 
       //change sthe history / route to update the url
-      this.props.history.push({ pathname:'/results', query: { key1: e.target.value } });
+      this.props.history.push({ pathname :'/results',
+                                   query : { term : this.state.beeritem,
+                                             type : this.state.searchType,
+                                           sortBy : this.state.sortBy,
+                                        sortOrder : this.state.sortOrder }
+                              });
     },
   render: function() {
     return (<div>

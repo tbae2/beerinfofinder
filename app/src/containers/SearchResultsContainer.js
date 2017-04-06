@@ -3,23 +3,24 @@ var React = require('react');
 var SearchResults =require('../components/SearchResults');
 var beerhelpers = require('../utils/beerdbhelper');
 var FilterBox = require('../components/FilterBox');
+import { withRouter } from 'react-router-dom'
 
 var SearchResultsContainer = React.createClass({
 
-    getInitialState: function(){
-         return (
-           {
-             beeritem: []
-           }
-         )
-    },
+    // getInitialState: function(){
+    //      return (
+    //        {
+    //          beeritem: []
+    //        }
+    //      )
+    // },
     searchBeer: function(beerquery){
         beerhelpers.search(beerquery)
                 .then(function(beerInfo){
                   //console.log(beerInfo);
-                    this.setState({
-                      beeritem: beerInfo
-                    })
+                    // this.setState({
+                    //   beeritem: beerInfo
+                    // })
 
                 }.bind(this));
 
@@ -43,10 +44,11 @@ var SearchResultsContainer = React.createClass({
       //   this.setState({
       //     beeritem: query.beeritem
       //   })
-      this.searchBeer([this.props.location.state.beeritem,
-                       this.props.location.state.searchType,
-                       this.props.location.state.sortOrder,
-                       this.props.location.state.sortBy]);
+   console.log(this.props.location.query.type);
+      // this.searchBeer([this.props.location.state.beeritem,
+      //                  this.props.location.state.searchType,
+      //                  this.props.location.state.sortOrder,
+      //                  this.props.location.state.sortBy]);
 
     },
     componentWillReceiveProps: function(nextProps){
@@ -55,19 +57,21 @@ var SearchResultsContainer = React.createClass({
             //   beeritem:nextProps.location.state.beeritem
             // });
           //  console.log(nextProps);
-          this.searchBeer([this.props.location.state.beeritem,
-                           this.props.location.state.searchType,
-                           this.props.location.state.sortOrder,
-                           this.props.location.state.sortBy]);
+        //  console.log(this.props.location.query);
+          // this.searchBeer([this.props.location.state.beeritem,
+          //                  this.props.location.state.searchType,
+          //                  this.props.location.state.sortOrder,
+          //                  this.props.location.state.sortBy]);
 
     },
   render: function() {
 
         return(
           <div>
-                    {this.state.beeritem.map(function(data){
+                  {/* {console.log(this.props.location.query)} */}
+                    {/* {this.state.beeritem.map(function(data){
                     return <SearchResults key={data.id} onUpdate={data} />
-                  })}
+                  })} */}
 
         </div>
         )
