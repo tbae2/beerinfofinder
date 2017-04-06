@@ -2,6 +2,9 @@ var React = require('react');
 // var PropTypes = React.PropTypes;
 import SearchBar from '../components/SearchBar'
 import FilterBox from '../components/FilterBox'
+import beerhelper from '../utils/beerdbhelper'
+import SearchResult from '../components/SearchResults'
+import { withRouter } from 'react-router-dom'
 
 var SearchBarContainer = React.createClass({
     // contextTypes: {
@@ -17,7 +20,7 @@ var SearchBarContainer = React.createClass({
       }
     },
       handleUpdateQuery: function(e){
-      //  console.log(e.target.value);
+      console.log(e.target.value);
       //set state as the search is updated
         this.setState({
           beeritem: e.target.value
@@ -48,18 +51,9 @@ var SearchBarContainer = React.createClass({
       this.setState({
           searchInitiated: {display: 'inline'}
       })
-      //send state as prop through react router path
 
-      // this.context.router.push({
-      //   pathname: '/results',
-      //   state: {
-      //     beeritem: this.state.beeritem,
-      //     searchType: this.state.searchType,
-      //     sortOrder: this.state.sortOrder,
-      //     sortBy: this.state.sortBy
-      //   }
-      //  })
-
+      //change sthe history / route to update the url
+      this.props.history.push({ pathname:'/results', query: { key1: e.target.value } });
     },
   render: function() {
     return (<div>

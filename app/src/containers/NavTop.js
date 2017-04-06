@@ -1,9 +1,7 @@
 import React from 'react';
 //var ReactBootstrap = require('react-bootstrap');
-import { Navbar, Nav, NavItem } from 'react-bootstrap'
-import { Route,NavLink,Link } from 'react-router-dom'
-import { LinkContainer } from 'react-router-bootstrap'
-
+import { Navbar, Nav} from 'react-bootstrap'
+import { Route,Link } from 'react-router-dom'
 
 const ListItemLink = ({to, children}) => (
   <Route path={to} children={({match}) => (

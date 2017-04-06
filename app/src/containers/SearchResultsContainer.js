@@ -1,5 +1,5 @@
 var React = require('react');
-var PropTypes = React.PropTypes;
+// var PropTypes = React.PropTypes;
 var SearchResults =require('../components/SearchResults');
 var beerhelpers = require('../utils/beerdbhelper');
 var FilterBox = require('../components/FilterBox');

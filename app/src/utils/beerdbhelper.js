@@ -40,15 +40,15 @@ function searchBeer(beerQuery) {
     }
 };
 
-function sortBeer(inboundSort){
-                console.log(inboundSort);
-                console.log(inboundSort[2]);
-           return  inboundSort[2].sort(function(a,b){
-                      return a.abv - b.abv;
-                })
-
-
-    };
+// function sortBeer(inboundSort){
+//                 console.log(inboundSort);
+//                 console.log(inboundSort[2]);
+//            return  inboundSort[2].sort(function(a,b){
+//                       return a.abv - b.abv;
+//                 })
+//
+//
+//     };
 
 
 
