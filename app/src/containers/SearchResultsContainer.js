@@ -3,7 +3,7 @@ var React = require('react');
 var SearchResults =require('../components/SearchResults');
 var beerhelpers = require('../utils/beerdbhelper');
 var FilterBox = require('../components/FilterBox');
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 
 var SearchResultsContainer = React.createClass({
 
@@ -15,6 +15,7 @@ var SearchResultsContainer = React.createClass({
     //      )
     // },
     searchBeer: function(beerquery){
+      // console.log(beerquery);
         beerhelpers.search(beerquery)
                 .then(function(beerInfo){
                   //console.log(beerInfo);
@@ -45,6 +46,8 @@ var SearchResultsContainer = React.createClass({
       //     beeritem: query.beeritem
       //   })
    console.log(this.props.location.query.type);
+
+    this.searchBeer(this.props.location.query);
       // this.searchBeer([this.props.location.state.beeritem,
       //                  this.props.location.state.searchType,
       //                  this.props.location.state.sortOrder,

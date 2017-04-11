@@ -2,9 +2,9 @@ var React = require('react');
 // var PropTypes = React.PropTypes;
 import SearchBar from '../components/SearchBar'
 import FilterBox from '../components/FilterBox'
-import beerhelper from '../utils/beerdbhelper'
-import SearchResult from '../components/SearchResults'
-import { withRouter } from 'react-router-dom'
+// import beerhelper from '../utils/beerdbhelper'
+// import SearchResult from '../components/SearchResults'
+// import { withRouter } from 'react-router-dom'
 
 var SearchBarContainer = React.createClass({
     // contextTypes: {

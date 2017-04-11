@@ -6,12 +6,15 @@ var key = breweryKey.breweryDb;
 
 //http://api.brewerydb.com/v2/search
 
+const apiUrl = 'http://localhost:3030';
+
 function searchBeer(beerQuery) {
-    //  console.log(beerQuery);
+      console.log(beerQuery);
+    //  console.log(beerQuery.type);
     // http://api.brewerydb.com/v2
-    // http://localhost:3000
-    if (beerQuery[1] === 'beername') {
-        return axios.get('http://api.brewerydb.com/v2/search?q=' + beerQuery[0] + '&type=beer&key=' + key)
+    // http://localhost:3030
+    if (beerQuery.type === 'beername') {
+        return axios.get(apiUrl + '/search?q=' + beerQuery.term + '&type=beer&key=' + key)
                 .then(function(response){
                         //console.log(response);
                         //console.log(beerQuery[2]);
@@ -23,19 +26,19 @@ function searchBeer(beerQuery) {
                         }
                         return beersToGet;
                     }).then(function(response){
-                        return axios.get('http://api.brewerydb.com/v2/beers?ids=' + response + '&order=' + beerQuery[3] + '&sort=' + beerQuery[2] + '&key=' + key);
+                        return axios.get( apiUrl + '/beers?ids=' + response + '&order=' + beerQuery.sortOrder + '&sort=' + beerQuery.sortBy + '&key=' + key);
                     })
-    } else if (beerQuery[1] === 'breweryname') {
-        return axios.get('http://api.brewerydb.com/v2/search?q=' + beerQuery[0] + '&type=brewery&key=' + key)
+    } else if (beerQuery.type === 'breweryname') {
+        return axios.get(apiUrl + '/search?q=' + beerQuery[0] + '&type=brewery&key=' + key)
             .then(function(response) {
                 //console.log(response.data.data[0].id);
-                return axios.get('http://api.brewerydb.com/v2/brewery/' + response.data.data[0].id + '/beers?key=' + key)
+                return axios.get(apiUrl + '/brewery/' + response.data.data[0].id + '/beers?key=' + key)
             });
-    } else if (beerQuery[1] === 'beertype') {
-        return axios.get('http://api.brewerydb.com/v2/search/style?q=' + beerQuery[0] + '&key=' + key)
+    } else if (beerQuery.type === 'beertype') {
+        return axios.get(apiUrl + '/search/style?q=' + beerQuery[0] + '&key=' + key)
             .then(function(response) {
                 // console.log(response.data.data[0]);
-                return axios.get('http://api.brewerydb.com/v2/beers?styleId=' + response.data.data[0].id + '&key=' + key)
+                return axios.get(apiUrl + '/beers?styleId=' + response.data.data[0].id + '&key=' + key)
             });
     }
 };

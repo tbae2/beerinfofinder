@@ -1,6 +1,6 @@
 import React from 'react';
 //var PropTypes = React.PropTypes;
-import SearchBarContainer from '../containers/SearchBarContainer';
+// import SearchBarContainer from '../containers/SearchBarContainer';
 import TopNav from '../containers/NavTop';
 // import SearchResults from './SearchResults';
 
@@ -11,7 +11,7 @@ var main = React.createClass({
 
       <div className="main-container">
               <TopNav />
-      
+
         {this.props.children}
       </div>
     );
