@@ -20,7 +20,7 @@ var SearchBarContainer = React.createClass({
       }
     },
       handleUpdateQuery: function(e){
-      console.log(e.target.value);
+      // console.log(e.target.value);
       //set state as the search is updated
         this.setState({
           beeritem: e.target.value
@@ -33,13 +33,13 @@ var SearchBarContainer = React.createClass({
 
       },
       updateSortBy: function(e){
-          console.log(e.target.value);
+          // console.log(e.target.value);
           this.setState({
             sortBy: e.target.value
           });
       },
       updateSortOrder: function(e){
-          console.log(e.target.value);
+          // console.log(e.target.value);
         this.setState({
           sortOrder: e.target.value
         })

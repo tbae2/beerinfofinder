@@ -1,27 +1,27 @@
 var React = require('react');
 // var PropTypes = React.PropTypes;
-var SearchResults =require('../components/SearchResults');
+import SearchResults from '../components/SearchResults';
 var beerhelpers = require('../utils/beerdbhelper');
 var FilterBox = require('../components/FilterBox');
 // import { withRouter } from 'react-router-dom'
 
 var SearchResultsContainer = React.createClass({
 
-    // getInitialState: function(){
-    //      return (
-    //        {
-    //          beeritem: []
-    //        }
-    //      )
-    // },
+    getInitialState: function(){
+         return (
+           {
+             beeritems: []
+           }
+         )
+    },
     searchBeer: function(beerquery){
       // console.log(beerquery);
         beerhelpers.search(beerquery)
                 .then(function(beerInfo){
-                  //console.log(beerInfo);
-                    // this.setState({
-                    //   beeritem: beerInfo
-                    // })
+                  console.log(beerInfo);
+                    this.setState({
+                      beeritems: beerInfo
+                    })
 
                 }.bind(this));
 
@@ -45,9 +45,10 @@ var SearchResultsContainer = React.createClass({
       //   this.setState({
       //     beeritem: query.beeritem
       //   })
-   console.log(this.props.location.query.type);
+  //  console.log(this.props.location.query.type);
 
     this.searchBeer(this.props.location.query);
+
       // this.searchBeer([this.props.location.state.beeritem,
       //                  this.props.location.state.searchType,
       //                  this.props.location.state.sortOrder,
@@ -71,11 +72,13 @@ var SearchResultsContainer = React.createClass({
 
         return(
           <div>
-                  {/* {console.log(this.props.location.query)} */}
-                    {/* {this.state.beeritem.map(function(data){
-                    return <SearchResults key={data.id} onUpdate={data} />
-                  })} */}
 
+                    {
+                      this.state.beeritems.map(function(data){
+                        console.log(data);
+                        return <SearchResults key={data.id} onUpdate={data} />
+                      })
+                    }
         </div>
         )
 

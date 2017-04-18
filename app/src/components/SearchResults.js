@@ -1,10 +1,10 @@
 import React from 'react';
-import { Panel } from 'react-bootstrap';
+import Panel from 'react-bootstrap';
 
 
-function SearchResults(props){
-  //console.log(props.onUpdate);
-  return(
+const SearchResults = (props) => (
+
+
 
   <div className="col-sm-6 col-md-3 resultsbox">
     <Panel header={props.onUpdate.name}>
@@ -14,8 +14,5 @@ function SearchResults(props){
     </Panel>
   </div>
 
-  )
-};
 
-
-export default SearchResults;
+);
