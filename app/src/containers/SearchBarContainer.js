@@ -14,8 +14,8 @@ var SearchBarContainer = React.createClass({
       return {
         beeritem: '',
         searchType: 'beername',
-        sortOrder: 'ASC',
-        sortBy: 'name',
+        sortOrder: 'name',
+        sortBy: 'ASC',
         searchInitiated: {display: 'none'}
       }
     },
